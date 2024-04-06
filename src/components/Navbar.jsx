@@ -1,10 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GT_Walsheim_Pro } from "@/utils/fonts";
-import { DropdownIcon, MenuIcon } from "@/utils/svgs";
+import { DropdownIcon } from "@/utils/svgs";
 import { NAVLINKS } from "@/constants";
 import Menu from "./Menu";
 
