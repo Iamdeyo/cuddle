@@ -34,7 +34,7 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <ul className="items-center gap-10 flex ">
+          <ul className="items-center gap-10 hidden lg:flex ">
             {NAVLINKS.map((item) => (
               <li key={item.id} className="relative group">
                 <Link
