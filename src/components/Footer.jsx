@@ -43,7 +43,12 @@ const Footer = () => {
           <div className="footer-nav-item">
             <p className="font-bold">Company</p>
             <Link href={"/"}> About us</Link>
-            <Link href={"/"}> Careers</Link>
+            <Link href={"/"} className="flex items-center gap-1.5">
+              Careers
+              <span className="bg-primary rounded-3xl text-[6px] text-white px-1.5 leading-4 lg:leading-5 font-light">
+                Coming soon
+              </span>
+            </Link>
           </div>
           <div className="footer-nav-item">
             <p className="font-bold">Learn</p>

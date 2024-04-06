@@ -7,10 +7,14 @@ body {
 }
 
 .custom-container {
-  @apply px-4 md:px-6 mx-auto lg:container;
+  @apply px-4 md:px-6 mx-auto lg:container xl:max-w-[1182px];
 }
 .btn-primary {
-  @apply bg-primary text-white rounded md:rounded-[7px] font-bold text-xs md:text-sm capitalize transition-all ease-in-out duration-300 hover:opacity-85;
+  @apply bg-primary text-white rounded-[11px] font-bold text-xs md:text-sm capitalize transition-all ease-in-out duration-300 hover:opacity-85;
+}
+
+.scroll-bar::-webkit-scrollbar {
+  height: 0px;
 }
 .footer-nav-item {
   @apply flex flex-col text-sm md:text-base gap-2.5 w-full xs:w-1/2  md:gap-3.5  md:w-fit flex-none;
