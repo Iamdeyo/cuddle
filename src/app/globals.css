@@ -17,7 +17,7 @@ body {
   height: 0px;
 }
 .footer-nav-item {
-  @apply flex flex-col text-sm md:text-base gap-2.5 w-full xs:w-1/2  md:gap-3.5  md:w-fit flex-none;
+  @apply flex flex-col text-[0.625rem] xs:text-sm md:text-base gap-2.5 w-1/2  md:gap-3.5  md:w-fit flex-none;
 }
 .footer-nav-item > * {
   @apply w-fit hover:underline;

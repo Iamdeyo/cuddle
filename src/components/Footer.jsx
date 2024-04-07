@@ -4,11 +4,11 @@ import { GT_Walsheim_Pro } from "@/utils/fonts";
 
 const Footer = () => {
   return (
-    <footer className="py-6">
+    <footer className="pt-52 pb-32">
       <div className="custom-container">
         <div className="flex flex-wrap md:flex-nowrap gap-y-10 w-full md:justify-between md:items-center md:gap-5">
           <div className="flex flex-col gap-3.5 w-full md:w-fit">
-            <Link href={"/"} className="flex items-center gap-1 ">
+            <Link href={"/"} className="flex items-center gap-1 w-fit">
               <div className="w-[38.33px] md:w-[42.61px]">
                 <Image
                   src={"/cuddle-logo.svg"}
@@ -28,7 +28,7 @@ const Footer = () => {
                 Cuddle
               </span>
             </Link>
-            <p className="text-xs max-w-[40ch]">
+            <p className="text-xs max-w-[60ch]">
               Cuddle Realty is at the forefront of transforming the real estate
               coownership landscape, offering a groundbreaking platform that
               empowers investors to unlock the potential of shared property
@@ -61,11 +61,11 @@ const Footer = () => {
             <a href="mailto:hello@cuddlerealty.com">hello@cuddlerealty.com</a>
           </div>
         </div>
-        <div className="mt-10 text-primary flex justify-center gap-x-3 gap-y-1 text-xs flex-wrap text-center">
-          <span className="w-full md:w-fit">
+        <div className="mt-10 text-primary flex justify-center gap-x-3 gap-y-1 text-[0.5rem] xs:text-xs flex-wrap text-center">
+          <span className="w-full xs:w-fit">
             © 2023 Cuddle Realty. All rights reserved.
           </span>
-          <span className="hidden md:inline border border-primary w-0"></span>
+          <span className="hidden xs:inline border border-primary w-0"></span>
           <span>Privacy Policy</span>
           <span className="border border-primary w-0"></span>
           <span>Terms of Use</span>

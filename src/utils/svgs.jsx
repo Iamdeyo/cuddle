@@ -61,4 +61,22 @@ const ArrowRight = (props) => (
   </svg>
 );
 
-export { MenuIcon, DropdownIcon, ArrowLeft, ArrowRight };
+const MailIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={28}
+    height={24}
+    fill="none"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      fillOpacity={0.75}
+      fillRule="evenodd"
+      d="M20.587 0a6.742 6.742 0 0 1 6.748 6.733v10.534c0 3.72-3.027 6.733-6.748 6.733H7.415C3.693 24 .668 20.987.668 17.267V6.733A6.734 6.734 0 0 1 7.415 0h13.172Zm2.121 8.72.107-.107A1.031 1.031 0 0 0 22.8 7.28a1.121 1.121 0 0 0-.705-.347c-.28-.014-.547.08-.748.267L15.335 12a2.088 2.088 0 0 1-2.667 0l-6-4.8c-.415-.307-.988-.267-1.333.093-.36.36-.4.934-.095 1.334l.175.173 6.066 4.733a4.191 4.191 0 0 0 2.6.907c.946 0 1.867-.32 2.612-.907l6.015-4.813Z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+export { MenuIcon, DropdownIcon, ArrowLeft, ArrowRight, MailIcon };
