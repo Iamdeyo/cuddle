@@ -77,3 +77,22 @@ export const NEWSANDUPDATES = [
     img: "/news-img-1.png",
   },
 ];
+
+export const FEATURESNAV = [
+  {
+    id: 1,
+    title: "asset flip",
+  },
+  {
+    id: 2,
+    title: "Land Banking",
+  },
+  {
+    id: 3,
+    title: "Construction",
+  },
+  {
+    id: 4,
+    title: "Rental Projects",
+  },
+];
