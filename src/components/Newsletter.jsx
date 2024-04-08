@@ -1,11 +1,14 @@
-import { MailIcon } from "@/utils/svgs";
+import { Dots, MailIcon } from "@/utils/svgs";
 
 const Newsletter = () => {
   return (
-    <section className="pt-28">
+    <section className="pt-28 newsletter">
       <div className="bg-[#d891f91c] sm:bg-transparent">
         <div className="custom-container">
-          <div className="sm:bg-[#d891f91c] text-[#191825] py-12 sm:py-14 sm:px-10 lg:px-16 lg:py-32 flex flex-col justify-center items-center text-center rounded-[32px] max-w-[1110px] mx-auto">
+          <div className="sm:bg-[#d891f91c] text-[#191825] py-12 sm:py-14 sm:px-10 lg:px-16 lg:py-32 flex flex-col justify-center items-center text-center rounded-[32px] max-w-[1110px] mx-auto relative">
+            <div className="hidden sm:block absolute -top-14 -right-10">
+              <Dots />
+            </div>
             <p className="text-primary text-[0.625rem] sm:text-lg lg:text-[1.5rem] uppercase tracking-[20%] font-semibold mb-7 sm:mb-8">
               subscribe to our newsletter
             </p>

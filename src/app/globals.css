@@ -6,6 +6,45 @@ body {
   background-color: #fff;
 }
 
+.bg-bottom-left {
+  background-image: url("/bg-1.png");
+  background-repeat: no-repeat;
+  background-size: 169px 125px;
+  background-position: bottom left;
+}
+
+.bg-top-right {
+  background-image: url("/bg-2.png");
+  background-repeat: no-repeat;
+  background-size: 139px 103px;
+  background-position: top right;
+}
+
+.newsletter {
+  background-image: url("/ellipse.png");
+  background-repeat: no-repeat;
+
+  background-position: bottom right;
+}
+footer {
+  background-image: url("/objects.png");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    background-size: 80px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .bg-bottom-left,
+  .bg-top-right {
+    background-size: 450px 340px;
+  }
+}
+
 .custom-container {
   @apply px-4 md:px-6 mx-auto lg:container xl:max-w-[1182px];
 }

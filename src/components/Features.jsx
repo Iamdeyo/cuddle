@@ -3,13 +3,20 @@
 import { useState } from "react";
 import Image from "next/image";
 import { FEATURESNAV } from "@/constants";
+import { CurvedLines } from "@/utils/svgs";
 
 const Features = () => {
   const [selectFeature, setSelectFeature] = useState(1);
   return (
-    <section className="py-28 text-[#102137]">
+    <section className="py-14 md:py-28 text-[#102137] overflow-x-hidden">
       <div className="custom-container">
-        <ul className="flex items-center justify-between max-w-[870px] mx-auto mb-10 lg:mb-32">
+        <ul className="features-nav relative flex items-center justify-between max-w-[870px] mx-auto mb-10 lg:mb-32">
+          <div className="absolute -z-[1] bottom-full -left-[50px]">
+            <CurvedLines />
+          </div>
+          <div className="absolute -z-[1]  bottom-full md:bottom-0 right-0 md:-right-[50px]">
+            <CurvedLines className="rotate-180" />
+          </div>
           {FEATURESNAV.map((item) => (
             <li key={item.id}>
               <button
@@ -23,7 +30,7 @@ const Features = () => {
           ))}
         </ul>
       </div>
-      <div className="relative">
+      <div className="relative ">
         <div className="custom-container">
           <div className="flex flex-col gap-y-10 lg:flex-row">
             <div className="lg:w-3/5 lg:pr-10">
