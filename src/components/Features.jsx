@@ -7,7 +7,7 @@ import { FEATURESNAV } from "@/constants";
 const Features = () => {
   const [selectFeature, setSelectFeature] = useState(1);
   return (
-    <section className="my-20 text-[#102137]">
+    <section className="py-28 text-[#102137]">
       <div className="custom-container">
         <ul className="flex items-center justify-between max-w-[870px] mx-auto mb-10 lg:mb-32">
           {FEATURESNAV.map((item) => (
@@ -48,11 +48,11 @@ const Features = () => {
                 Explore Properties
               </button>
             </div>
-            <div className="w-full lg:w-2/5 aspect-[9/10] "></div>
+            <div className="w-full lg:w-2/5 aspect-[9/10] sm:max-h-[850px] lg:max-h-none"></div>
           </div>
         </div>
         <div className="absolute bottom-0 lg:bottom-auto lg:top-0 right-0 w-full lg:w-2/5 overflow-hidden">
-          <div className="w-[78%] aspect-[313.38/389.51] bg-[#552B94] rounded-[19px] translate-x-1/3 flex items-center">
+          <div className="w-[78%] sm:max-w-[630px] lg:max-w-[640px] aspect-[313.38/389.51] bg-[#552B94] rounded-[19px] translate-x-1/3 md:translate-x-[400px] lg:translate-x-1/3 max- flex items-center">
             <div className=" rounded-[19px] w-[89%] aspect-[280.39/303.23] -translate-x-1/3 relative">
               <div className=" border-4 border-white w-full h-[86%] rounded-[19px] overflow-hidden">
                 <Image

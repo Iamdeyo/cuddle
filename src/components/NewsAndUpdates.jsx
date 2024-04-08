@@ -26,7 +26,7 @@ const NewsAndUpdates = () => {
         {NEWSANDUPDATES.map((news) => (
           <li
             key={news.id}
-            className="w-full flex-none flex flex-col max-w-[316px] h-[381px] rounded-[15.04px] bg-white shadow-md text-[#102137]"
+            className="w-full card-shadow flex-none flex flex-col max-w-[316px] h-[381px] rounded-[15.04px] bg-white text-[#102137]"
           >
             <div className="h-[182.7px] flex-none w-full rounded-[15.04px] overflow-hidden">
               <Image

@@ -28,7 +28,7 @@ const Footer = () => {
                 Cuddle
               </span>
             </Link>
-            <p className="text-xs max-w-[60ch]">
+            <p className="text-xs max-w-[60ch] md:max-w-[30ch]">
               Cuddle Realty is at the forefront of transforming the real estate
               coownership landscape, offering a groundbreaking platform that
               empowers investors to unlock the potential of shared property
