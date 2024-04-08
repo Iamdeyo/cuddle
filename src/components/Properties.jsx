@@ -1,8 +1,9 @@
 "use client";
-import { DropdownIcon, HeartIcon, SearchIcon } from "@/utils/svgs";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { DropdownIcon, SearchIcon } from "@/utils/svgs";
 import Property from "./Property";
 import { KEYBENEFITS } from "@/constants";
-import { useEffect, useState } from "react";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
@@ -29,10 +30,38 @@ const Properties = () => {
     fetchData();
   }, []);
 
+  const containerVariants = {
+    offscreen: {},
+    onscreen: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.5 },
+    },
+  };
+  const variants = {
+    offscreen: {
+      y: 100,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
     <section>
       <div className="custom-container">
-        <div className="flex flex-col gap-3 sm:gap-5 sm:flex-row sm:items-center md:gap-10 mb-9 md:mb-11">
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+          variants={variants}
+          className="flex flex-col gap-3 sm:gap-5 sm:flex-row sm:items-center md:gap-10 mb-9 md:mb-11"
+        >
           <div className="flex items-center gap-4 xs:gap-7 h-8">
             <label className="inline-flex gap-2 text-xs md:text-base flex-none items-center cursor-pointer">
               <span className="font-bold">List View</span>
@@ -66,32 +95,46 @@ const Properties = () => {
               placeholder="Search by location"
             />
           </div>
-        </div>
+        </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-11">
           {isLoading ? (
             <div>isLoading</div>
           ) : (
             properties.length > 0 &&
-            properties
-              .slice(0, 6)
-              .map((data) => <Property key={data.id} data={data} />)
+            properties.slice(0, 6).map((data) => (
+              <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, offset: 50 }}
+                variants={variants}
+                key={data.id}
+              >
+                <Property data={data} />
+              </motion.div>
+            ))
           )}
         </div>
-        <div className="text-[#102137] hidden md:block text-[1.125rem] mt-20">
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="text-[#102137] hidden md:block text-[1.125rem] mt-20"
+        >
           <span className=" font-semibold bg-[#FAF6FF] p-2 rounded-[7px] mb-4 inline-block">
             Key Benefits:
           </span>
           <ul className="list-disc marker:text-primary pl-5">
             {KEYBENEFITS.map((benefit) => (
-              <li className="" key={benefit.id}>
+              <motion.li variants={variants} className="" key={benefit.id}>
                 <p>
                   <span className="font-semibold">{benefit.title}:</span>{" "}
                   {benefit.content}
                 </p>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

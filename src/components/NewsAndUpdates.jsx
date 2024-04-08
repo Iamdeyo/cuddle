@@ -1,12 +1,56 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "@/utils/svgs";
 import { NEWSANDUPDATES } from "@/constants";
+import { motion } from "framer-motion";
 
 const NewsAndUpdates = () => {
+  const containerVariants = {
+    offscreen: {},
+    onscreen: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.5 },
+    },
+  };
+  const variants = {
+    offscreen: {
+      y: 100,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
+  const cardVariants = {
+    offscreen: {
+      x: -300,
+      opacity: 0,
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
   return (
     <section className="pb-4 pt-[90px] lg:pt-[115px]">
-      <div className="custom-container">
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={variants}
+        className="custom-container"
+      >
         <div className="flex items-center justify-between">
           <p className="font-semibold text-2xl md:text-[2rem] lg:text-[2.75rem] text-[#102137]">
             News and Updates
@@ -20,11 +64,18 @@ const NewsAndUpdates = () => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <ul className="custom-container flex items-center overflow-y-hidden overflow-x-auto gap-4 md:gap-8 lg:gap-[4.5rem] scroll-bar pb-1 my-11">
+      <motion.ul
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true }}
+        variants={containerVariants}
+        className="custom-container flex items-center overflow-y-hidden overflow-x-auto gap-4 md:gap-8 lg:gap-[4.5rem] scroll-bar pb-1 my-11"
+      >
         {NEWSANDUPDATES.map((news) => (
-          <li
+          <motion.li
+            variants={variants}
             key={news.id}
             className="w-full card-shadow flex-none flex flex-col max-w-[316px] h-[381px] rounded-[15.04px] bg-white text-[#102137]"
           >
@@ -68,9 +119,9 @@ const NewsAndUpdates = () => {
                 Read more
               </Link>
             </div>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
       <div className="custom-container">
         <Link
           href={"/"}

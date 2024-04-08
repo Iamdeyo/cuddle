@@ -1,11 +1,34 @@
+"use client";
+import { motion } from "framer-motion";
 import { Dots, MailIcon } from "@/utils/svgs";
 
 const Newsletter = () => {
+  const variants = {
+    offscreen: {
+      y: 100,
+      opacity: 0,
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
   return (
     <section className="pt-28 newsletter">
       <div className="bg-[#d891f91c] sm:bg-transparent">
         <div className="custom-container">
-          <div className="sm:bg-[#d891f91c] text-[#191825] py-12 sm:py-14 sm:px-10 lg:px-16 lg:py-32 flex flex-col justify-center items-center text-center rounded-[32px] max-w-[1110px] mx-auto relative">
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+            variants={variants}
+            className="sm:bg-[#d891f91c] text-[#191825] py-12 sm:py-14 sm:px-10 lg:px-16 lg:py-32 flex flex-col justify-center items-center text-center rounded-[32px] max-w-[1110px] mx-auto relative"
+          >
             <div className="hidden sm:block absolute -top-14 -right-10">
               <Dots />
             </div>
@@ -31,7 +54,7 @@ const Newsletter = () => {
                 Subscribe
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
