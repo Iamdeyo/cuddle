@@ -1,8 +1,34 @@
+"use client";
 import { DropdownIcon, HeartIcon, SearchIcon } from "@/utils/svgs";
 import Property from "./Property";
 import { KEYBENEFITS } from "@/constants";
+import { useEffect, useState } from "react";
 
 const Properties = () => {
+  const [properties, setProperties] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(
+          "https://api-test.cuddlerealty.com/api/properties"
+        );
+        const resData = await res.json();
+        if (resData) {
+          setProperties(resData.data.data);
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section>
       <div className="custom-container">
@@ -23,9 +49,7 @@ const Properties = () => {
                 Sort by:
               </span>
               <select className="bg-[#FAFAFA] border-none ring-1 ring-transparent border h-full rounded-lg outline-none focus:ring-primary block pl-12 pr-7 md:pl-14">
-                <option selected value="newest">
-                  Newest
-                </option>
+                <option defaultValue="newest">Newest</option>
                 <option value="oldest"> Oldest</option>
               </select>
             </label>
@@ -44,12 +68,14 @@ const Properties = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-11">
-          <Property />
-          <Property />
-          <Property />
-          <Property />
-          <Property />
-          <Property />
+          {isLoading ? (
+            <div>isLoading</div>
+          ) : (
+            properties.length > 0 &&
+            properties
+              .slice(0, 6)
+              .map((data) => <Property key={data.id} data={data} />)
+          )}
         </div>
         <div className="text-[#102137] hidden md:block text-[1.125rem] mt-20">
           <span className=" font-semibold bg-[#FAF6FF] p-2 rounded-[7px] mb-4 inline-block">

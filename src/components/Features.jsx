@@ -62,7 +62,7 @@ const Features = () => {
                   alt="properties-image"
                   sizes="100vh"
                   style={{
-                    width: "100%",
+                    width: "auto",
                     height: "100%",
                     objectFit: "cover",
                   }}
