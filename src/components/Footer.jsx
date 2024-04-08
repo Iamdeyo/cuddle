@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { GT_Walsheim_Pro } from "@/utils/fonts";
 
 const Footer = () => {
   return (
@@ -23,7 +22,7 @@ const Footer = () => {
                 />
               </div>
               <span
-                className={`font-medium text-[15.46px] leading-[17.7px] md:leading-[40px] md:text-[22px] ${GT_Walsheim_Pro.className}`}
+                className={`font-medium text-[15.46px] leading-[17.7px] md:leading-[40px] md:text-[22px]`}
               >
                 Cuddle
               </span>
